@@ -1,6 +1,8 @@
 # Movie-Rating-Extension
 Movie Rating Extension By X-Eman, Only for SwatchSeries.is will be updated later in the future for other websites, WORKS FOR ONLY MOVIES FOR NOW! THANKS :) now you dont have to search the rating each time, Feel free to improve on it.
 
+MOVIES SITE ==>> https://swatchseries.is/filter?type=movie&quality=all&release_year=all&genre=all&country=all
+
 
 NEEDS OMDB API KEY ACCESS TO WORK; GET YOUR API KEY HERE (free 1000 daily request limit) =>> https://www.omdbapi.com/apikey.aspx
 
