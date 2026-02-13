@@ -17,8 +17,19 @@ const timer = setInterval(async () => {
 
     if (!name) continue;
 
-    // Clean year if needed (e.g. "2023 • HD" → "2023")
     year = year ? year.split(/[^\d]/)[0] : "";
+
+    const ratingSpan = document.createElement("span");
+    ratingSpan.style.cssText = `
+      background: #f5c518;
+      color: black;
+      font-weight: bold;
+      padding: 2px 6px;
+      border-radius: 4px;
+      margin-left: 8px;
+      font-size: 0.9em;
+      vertical-align: middle;
+    `;
 
     try {
       const url = `https://www.omdbapi.com/?t=${encodeURIComponent(name)}&y=${year}&apikey=20fcc249`;
@@ -26,41 +37,16 @@ const timer = setInterval(async () => {
       const data = await res.json();
 
       if (data.Response === "True" && data.imdbRating && data.imdbRating !== "N/A") {
-        // Create a nice badge/span
-        const ratingSpan = document.createElement("span");
-        ratingSpan.style.cssText = `
-          background: #f5c518;
-          color: black;
-          font-weight: bold;
-          padding: 2px 6px;
-          border-radius: 4px;
-          margin-left: 8px;
-          font-size: 0.9em;
-          vertical-align: middle;
-        `;
-        ratingSpan.textContent = `${data.imdbRating}`;
-
-        // Insert right after the movie name
-        nameElem.appendChild(ratingSpan);
+        ratingSpan.textContent = data.imdbRating;
       } else {
-        ratingSpan.textContent = `N/A`;
-        ratingSpan.style.cssText = `
-          background: #f5c518;
-          color: black;
-          font-weight: bold;
-          padding: 2px 6px;
-          border-radius: 4px;
-          margin-left: 8px;
-          font-size: 0.9em;
-          vertical-align: middle;
-        `;
-        // Optional: show "N/A" or nothing
-        console.log(`No rating for "${name}" (${year})`);
+        ratingSpan.textContent = "N/A";
       }
     } catch (err) {
       console.error(`OMDB fetch failed for "${name}":`, err);
+      ratingSpan.textContent = "N/A";
     }
+    nameElem.appendChild(ratingSpan);
   }
 
   console.log("Ratings added!");
-}, 3000);
+}, 2000); //2sec delay to fetch the ratings
