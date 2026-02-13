@@ -1,4 +1,5 @@
 # Movie-Rating-Extension
+DONT FORGET TO PUT YOUR API KEY IN CONTENT.JS FOR IT TO WORK AND CAN ADD TO POP-UP.JS IF YOU WANT TO TEST AND IMPROVE
 Movie Rating Extension By X-Eman, Only for SwatchSeries.is will be updated later in the future for other websites, WORKS FOR ONLY MOVIES FOR NOW! THANKS :) now you dont have to search the rating each time, Feel free to improve on it.
 
 MOVIES SITE ==>> https://swatchseries.is/filter?type=movie&quality=all&release_year=all&genre=all&country=all
