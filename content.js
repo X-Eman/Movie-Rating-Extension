@@ -32,7 +32,7 @@ const timer = setInterval(async () => {
     `;
 
     try {
-      const url = `https://www.omdbapi.com/?t=${encodeURIComponent(name)}&y=${year}&apikey=20fcc249`;
+      const url = `https://www.omdbapi.com/?t=${encodeURIComponent(name)}&y=${year}&apikey="PLACE_API_KEY_HERE"`;
       const res = await fetch(url);
       const data = await res.json();
 
@@ -50,3 +50,4 @@ const timer = setInterval(async () => {
 
   console.log("Ratings added!");
 }, 2000); //2sec delay to fetch the ratings
+
