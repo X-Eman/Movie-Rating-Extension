@@ -1,0 +1,17 @@
+{
+    "name": "Movie Rating Extension",
+    "version": "1.6",
+    "description": "Movie Rating Extension By X-Eman, Only for SwatchSeries.is will be updated later in the future for other websites, WORKS FOR ONLY MOVIES FOR NOW! THANKS :) now you dont have to search the rating each time",
+    "author": "X-Eman",
+    "manifest_version": 3,
+    "permissions": ["activeTab", "scripting"],
+    "action": {
+      "default_popup": "popup.html"
+    },
+    "content_scripts": [
+      {
+        "matches": ["*://*/*"],
+        "js": ["content.js"]
+      }
+    ]
+  }
